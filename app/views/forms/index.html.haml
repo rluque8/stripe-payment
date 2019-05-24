@@ -1,0 +1,12 @@
+%form#stripe-form{:action => "/charge", :method => "post"}
+  .form-row
+    %label{:for => "card-element"}
+      Credit or debit card
+    #card-element
+      / A Stripe Element will be inserted here.
+    / Used to display Element errors.
+    #card-errors{role: "alert"}
+    %label Amount
+    %input#amountPay{type: "number", placeholder: "100€ ", max:100000}
+  = hidden_field_tag :authenticity_token, form_authenticity_token
+  %button Submit Payment
